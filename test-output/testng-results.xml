@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-25T23:39:57 IST" name="Default suite" finished-at="2026-01-25T23:40:09 IST" duration-ms="12116">
+  <suite started-at="2026-01-26T00:10:01 IST" name="Default suite" finished-at="2026-01-26T00:10:13 IST" duration-ms="11643">
     <groups>
     </groups>
-    <test started-at="2026-01-25T23:39:57 IST" name="Default test" finished-at="2026-01-25T23:40:09 IST" duration-ms="12116">
-      <class name="tutorialNinja.Register.TC_RF_005">
-        <test-method signature="verifyRegisteringWithAllFields()[pri:4, instance:tutorialNinja.Register.TC_RF_005@10e31a9a]" started-at="2026-01-25T23:39:57 IST" name="verifyRegisteringWithAllFields" finished-at="2026-01-25T23:40:09 IST" duration-ms="12009" status="PASS">
+    <test started-at="2026-01-26T00:10:01 IST" name="Default test" finished-at="2026-01-26T00:10:13 IST" duration-ms="11643">
+      <class name="tutorialNinja.Register.TC_RF_006">
+        <test-method signature="verifyRegisteringAccountNoNewsLetterSelected()[pri:4, instance:tutorialNinja.Register.TC_RF_006@10e31a9a]" started-at="2026-01-26T00:10:01 IST" name="verifyRegisteringAccountNoNewsLetterSelected" finished-at="2026-01-26T00:10:13 IST" duration-ms="11537" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegisteringWithAllFields -->
-      </class> <!-- tutorialNinja.Register.TC_RF_005 -->
+        </test-method> <!-- verifyRegisteringAccountNoNewsLetterSelected -->
+      </class> <!-- tutorialNinja.Register.TC_RF_006 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
