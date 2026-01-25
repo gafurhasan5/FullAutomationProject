@@ -9,8 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_RF_005 {
-	
-	@Test(priority=4)
+
+	@Test(priority = 4)
 	public void verifyRegisteringWithAllFields() {
 
 		WebDriver driver = new ChromeDriver();
@@ -34,16 +34,9 @@ public class TC_RF_005 {
 
 		driver.findElement(By.linkText("Continue")).click();
 		driver.findElement(By.xpath("//a[text()='Subscribe / unsubscribe to newsletter']")).click();
-		Assert.assertTrue(driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Newsletter']")).isDisplayed());
+		Assert.assertTrue(
+				driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Newsletter']")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.xpath("//input[@name='newsletter'][1]")).isSelected());
-		
-
-	
-
-
-		
-		
-
 
 		driver.quit();
 
@@ -52,6 +45,5 @@ public class TC_RF_005 {
 	private String getTimestampEmail() {
 		return "rehankhan" + System.currentTimeMillis() + "@gmail.com";
 	}
-
 
 }
