@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tutorialNinja.Register.TC_RF_005">
+      <class name="tutorialNinja.Register.TC_RF_006">
         <methods>
-          <include name="verifyRegisteringWithAllFields"/>
+          <include name="verifyRegisteringAccountNoNewsLetterSelected"/>
         </methods>
-      </class> <!-- tutorialNinja.Register.TC_RF_005 -->
+      </class> <!-- tutorialNinja.Register.TC_RF_006 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
