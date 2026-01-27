@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC_RF_006 {
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void verifyRegisteringAccountNoNewsLetterSelected() {
 
 		WebDriver driver = new ChromeDriver();
