@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import utils.CommonUtils;
+
 public class TC_RF_003 {
 	@Test(priority=2)
 	public void verifyRegisteringWithAllFields() {
@@ -22,7 +24,7 @@ public class TC_RF_003 {
 
 		driver.findElement(By.id("input-firstname")).sendKeys("Rehan");
 		driver.findElement(By.id("input-lastname")).sendKeys("hassan");
-		driver.findElement(By.id("input-email")).sendKeys(getTimestampEmail());
+		driver.findElement(By.id("input-email")).sendKeys(CommonUtils.getTimestampEmail());
 		driver.findElement(By.id("input-telephone")).sendKeys("1234567890");
 		driver.findElement(By.id("input-password")).sendKeys("12345");
 		driver.findElement(By.id("input-confirm")).sendKeys("12345");
@@ -57,7 +59,6 @@ public class TC_RF_003 {
 
 	}
 
-	private String getTimestampEmail() {
-		return "rehankhan" + System.currentTimeMillis() + "@gmail.com";
-	}
+
+
 }

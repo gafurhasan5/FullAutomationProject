@@ -10,6 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import utils.CommonUtils;
+
 public class TC_RF_012 {
 	@Test
 	public void verifyRegisteringAccountUsingKeyboarkey() {
@@ -55,7 +57,7 @@ public class TC_RF_012 {
 				
 		actions.sendKeys("Arun").pause(Duration.ofSeconds(1))
 		.sendKeys(Keys.TAB).pause(Duration.ofSeconds(1)).sendKeys("Motoori")
-		.sendKeys(Keys.TAB).pause(Duration.ofSeconds(1)).sendKeys(getTimestampEmail())
+		.sendKeys(Keys.TAB).pause(Duration.ofSeconds(1)).sendKeys(CommonUtils.getTimestampEmail())
 		.pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB).pause(Duration.ofSeconds(1))
 		.sendKeys("1234567890").pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
 		.pause(Duration.ofSeconds(1)).sendKeys("12345").pause(Duration.ofSeconds(1))
@@ -73,8 +75,6 @@ public class TC_RF_012 {
 
 	}
 
-	private String getTimestampEmail() {
-		return "rehankhan" + System.currentTimeMillis() + "@gmail.com";
-	}
+	
 
 }
