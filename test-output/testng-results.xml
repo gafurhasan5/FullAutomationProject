@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-27T15:52:41 IST" name="Default suite" finished-at="2026-01-27T15:52:47 IST" duration-ms="5179">
+  <suite started-at="2026-01-28T17:25:17 IST" name="Default suite" finished-at="2026-01-28T17:25:42 IST" duration-ms="24323">
     <groups>
     </groups>
-    <test started-at="2026-01-27T15:52:41 IST" name="Default test" finished-at="2026-01-27T15:52:47 IST" duration-ms="5179">
-      <class name="tutorialNinja.Register.TC_RF_011">
-        <test-method signature="verifyRegisteringAccountInvalidMobileNumber()[pri:0, instance:tutorialNinja.Register.TC_RF_011@5b8dfcc1]" started-at="2026-01-27T15:52:42 IST" name="verifyRegisteringAccountInvalidMobileNumber" finished-at="2026-01-27T15:52:47 IST" duration-ms="5134" status="PASS">
+    <test started-at="2026-01-28T17:25:17 IST" name="Default test" finished-at="2026-01-28T17:25:42 IST" duration-ms="24323">
+      <class name="tutorialNinja.Register.TC_RF_012">
+        <test-method signature="verifyRegisteringAccountUsingKeyboarkey()[pri:0, instance:tutorialNinja.Register.TC_RF_012@5c33f1a9]" started-at="2026-01-28T17:25:17 IST" name="verifyRegisteringAccountUsingKeyboarkey" finished-at="2026-01-28T17:25:42 IST" duration-ms="24230" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegisteringAccountInvalidMobileNumber -->
-      </class> <!-- tutorialNinja.Register.TC_RF_011 -->
+        </test-method> <!-- verifyRegisteringAccountUsingKeyboarkey -->
+      </class> <!-- tutorialNinja.Register.TC_RF_012 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
