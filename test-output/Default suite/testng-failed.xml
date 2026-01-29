@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tutorialNinja.Register.TC_RF_010">
+      <class name="tutorialNinja.Register.TC_RF_004">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyRegisteringAccountWithInvalidEmail"/>
+          <include name="verifyRegisteringWithoutAnyFields"/>
         </methods>
-      </class> <!-- tutorialNinja.Register.TC_RF_010 -->
+      </class> <!-- tutorialNinja.Register.TC_RF_004 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

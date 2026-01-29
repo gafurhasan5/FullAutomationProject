@@ -1,24 +1,27 @@
 package tutorialNinja.Register;
 
-import java.time.Duration;
+import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.Base;
+import utils.CommonUtils;
 
 public class TC_RF_004 extends Base {
 
 	WebDriver driver;
 
+	// Properties prop;
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
+		// prop=CommonUtils.loadProperties();
 		driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		driver.findElement(By.linkText("Register")).click();
 	}
@@ -32,8 +35,6 @@ public class TC_RF_004 extends Base {
 	public void verifyRegisteringWithoutAnyFields() {
 
 		// driver.findElement(By.name("agree")).click();
-		driver.findElement(By.xpath("//input[@value='Continue']")).click();
-
 		driver.findElement(By.xpath("//input[@value='Continue']")).click();
 
 		String expectedFirstNameWarning = "First Name must be between 1 and 32 characters!";
@@ -62,7 +63,6 @@ public class TC_RF_004 extends Base {
 				expectedPrivacyPolicyWarning);
 
 		// driver.quit();
-		driver.quit();
 
 	}
 

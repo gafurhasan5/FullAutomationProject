@@ -1,6 +1,8 @@
 package tutorialNinja.Register;
 
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -17,10 +19,11 @@ import utils.CommonUtils;
 public class TC_RF_012 extends Base {
 
 	WebDriver driver;
-
+	 Properties prop;
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
+		prop=CommonUtils.loadProperties();
 		driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		driver.findElement(By.linkText("Register")).click();
 	}
@@ -68,12 +71,12 @@ public class TC_RF_012 extends Base {
 		 * .pause(Duration.ofSeconds(1)).sendKeys(Keys.ENTER).build().perform();
 		 */
 
-		actions.sendKeys("Arun").pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB).pause(Duration.ofSeconds(1))
-				.sendKeys("Motoori").sendKeys(Keys.TAB).pause(Duration.ofSeconds(1))
+		actions.sendKeys(prop.getProperty("FirstName")).pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB).pause(Duration.ofSeconds(1))
+				.sendKeys(prop.getProperty("LastName")).sendKeys(Keys.TAB).pause(Duration.ofSeconds(1))
 				.sendKeys(CommonUtils.getTimestampEmail()).pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
-				.pause(Duration.ofSeconds(1)).sendKeys("1234567890").pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
-				.pause(Duration.ofSeconds(1)).sendKeys("12345").pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
-				.pause(Duration.ofSeconds(1)).sendKeys("12345").pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
+				.pause(Duration.ofSeconds(1)).sendKeys(prop.getProperty("PhoneNum")).pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
+				.pause(Duration.ofSeconds(1)).sendKeys(prop.getProperty("Password")).pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
+				.pause(Duration.ofSeconds(1)).sendKeys(prop.getProperty("Password")).pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
 				.pause(Duration.ofSeconds(1)).sendKeys(Keys.LEFT).pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB)
 				.pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB).pause(Duration.ofSeconds(1)).sendKeys(Keys.SPACE)
 				.pause(Duration.ofSeconds(1)).sendKeys(Keys.TAB).pause(Duration.ofSeconds(1)).sendKeys(Keys.ENTER)
@@ -81,7 +84,8 @@ public class TC_RF_012 extends Base {
 		Assert.assertTrue(driver.findElement(By.xpath("//*[@id='column-right']//a[text()='Logout']")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Success']")).isDisplayed());
 
-		driver.quit();
+		
+
 
 	}
 

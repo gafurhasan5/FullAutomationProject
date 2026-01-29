@@ -1,5 +1,7 @@
 package tutorialNinja.Register;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -14,7 +16,7 @@ public class TC_RF_013 extends Base {
 	WebDriver driver;
 
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
 		driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		driver.findElement(By.linkText("Register")).click();

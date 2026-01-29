@@ -1,5 +1,7 @@
 package tutorialNinja.Register;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +18,7 @@ public class TC_RF_014 extends Base {
 	WebDriver driver;
 
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
 		driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		driver.findElement(By.linkText("Register")).click();
@@ -42,6 +44,6 @@ public class TC_RF_014 extends Base {
 		System.out.println(fnColor);
 		Assert.assertEquals(fnContent, expectedContent);
 		Assert.assertEquals(fnColor, expectedColor);
-		driver.quit();
+		
 	}
 }

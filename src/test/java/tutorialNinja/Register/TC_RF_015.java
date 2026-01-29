@@ -1,5 +1,8 @@
 package tutorialNinja.Register;
 
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -14,10 +17,11 @@ import utils.CommonUtils;
 public class TC_RF_015 extends Base {
 
 	WebDriver driver;
-
+	 Properties prop;
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
+		prop=CommonUtils.loadProperties();
 		driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		driver.findElement(By.linkText("Register")).click();
 	}
@@ -32,12 +36,12 @@ public class TC_RF_015 extends Base {
 		//WebDriver driver = null;
 		//String browserName = env;
 
-		driver.findElement(By.id("input-firstname")).sendKeys("Rehan");
-		driver.findElement(By.id("input-lastname")).sendKeys("hassan");
+		driver.findElement(By.id("input-firstname")).sendKeys(prop.getProperty("FirstName"));
+		driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("LastName")); 
 		driver.findElement(By.id("input-email")).sendKeys(CommonUtils.getTimestampEmail());
-		driver.findElement(By.id("input-telephone")).sendKeys("1234567890");
-		driver.findElement(By.id("input-password")).sendKeys("12345");
-		driver.findElement(By.id("input-confirm")).sendKeys("12345");
+		driver.findElement(By.id("input-telephone")).sendKeys(prop.getProperty("PhoneNum"));
+		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("Password"));
+		driver.findElement(By.id("input-confirm")).sendKeys(prop.getProperty("Password"));
 		driver.findElement(By.name("agree")).click();
 		driver.findElement(By.xpath("//input[@value='Continue']")).click();
 
