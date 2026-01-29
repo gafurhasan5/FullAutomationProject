@@ -2,6 +2,7 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2026-01-29T15:05:11 IST" name="Default suite" finished-at="2026-01-29T15:05:33 IST" duration-ms="22021">
     <groups>
     </groups>
@@ -41,6 +42,18 @@
           </reporter-output>
         </test-method> <!-- verifyRegisteringWithDifferentTestEnvironments -->
       </class> <!-- tutorialNinja.Register.TC_RF_015 -->
+=======
+  <suite started-at="2026-01-28T18:38:46 IST" name="Default suite" finished-at="2026-01-28T18:38:53 IST" duration-ms="6727">
+    <groups>
+    </groups>
+    <test started-at="2026-01-28T18:38:46 IST" name="Default test" finished-at="2026-01-28T18:38:53 IST" duration-ms="6727">
+      <class name="tutorialNinja.Register.TC_RF_013">
+        <test-method signature="verifyPlaceHoldersOfTextFieldsInRegisterPage()[pri:0, instance:tutorialNinja.Register.TC_RF_013@5c33f1a9]" started-at="2026-01-28T18:38:47 IST" name="verifyPlaceHoldersOfTextFieldsInRegisterPage" finished-at="2026-01-28T18:38:53 IST" duration-ms="6601" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPlaceHoldersOfTextFieldsInRegisterPage -->
+      </class> <!-- tutorialNinja.Register.TC_RF_013 -->
+>>>>>>> f1741991fc89a01972f89b6cc63b2fc7b8e7bfe9
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
