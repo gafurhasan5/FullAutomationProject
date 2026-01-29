@@ -3,32 +3,40 @@ package tutorialNinja.Register;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
 import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import base.Base;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
-public class TC_RF_010 {
+public class TC_RF_010 extends Base {
 
-	@Test(priority = 5)
-	public void verifyRegisteringAccountWithInvalidEmail() throws IOException, InterruptedException {
+	WebDriver driver;
 
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/");
+	@BeforeMethod
+	public void setup() {
+		driver = openBrowserAndApplication();
 		driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		driver.findElement(By.linkText("Register")).click();
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+
+	@Test
+	public void verifyRegisteringAccountWithInvalidEmail() throws IOException, InterruptedException {
 
 		driver.findElement(By.id("input-firstname")).sendKeys("Rehan");
 		driver.findElement(By.id("input-lastname")).sendKeys("hassan");
@@ -59,19 +67,19 @@ public class TC_RF_010 {
 
 		FileHandler.copy(screenShot2,
 				new File("C:\\FullAutomationLiveProject\\FullAutomationProject\\Screenshots\\sc2Actual.png"));
-
+		//Thread.sleep(3000);
 		Assert.assertFalse(CompareTwoScreenshots(
 				"C:\\FullAutomationLiveProject\\FullAutomationProject\\Screenshots\\sc2Actual.png",
 				"C:\\FullAutomationLiveProject\\FullAutomationProject\\Screenshots\\Sc2Expected.png"));
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 
 		driver.findElement(By.id("input-email")).clear();
 		driver.findElement(By.id("input-email")).sendKeys("rehankhangmail");
 		driver.findElement(By.xpath("//input[@value='Continue']")).click();
-		Thread.sleep(3000);
+		
 		File screenShot3 = driver.findElement(By.xpath("//form[@class='form-horizontal']"))
 				.getScreenshotAs(OutputType.FILE);
-
+		Thread.sleep(3000);
 		FileHandler.copy(screenShot3,
 				new File("C:\\FullAutomationLiveProject\\FullAutomationProject\\Screenshots\\sc3Actual.png"));
 
@@ -89,7 +97,7 @@ public class TC_RF_010 {
 		ImageDiff ImageDifferences = imgdiffer.makeDiff(expectedbufferedImag, actualbufferedImag);
 		// If image has no difference it return true
 		boolean b = ImageDifferences.hasDiff();
-		System.out.println(b);
+		//System.out.println(b);
 		return ImageDifferences.hasDiff();
 	}
 

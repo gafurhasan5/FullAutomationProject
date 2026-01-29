@@ -6,21 +6,31 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import base.Base;
 import utils.CommonUtils;
 
-public class TC_RF_006 {
-	@Test(priority = 5)
-	public void verifyRegisteringAccountNoNewsLetterSelected() {
+public class TC_RF_006 extends Base {
 
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/");
+	WebDriver driver;
 
+	@BeforeMethod
+	public void setup() {
+		driver = openBrowserAndApplication();
 		driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		driver.findElement(By.linkText("Register")).click();
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+
+	@Test
+	public void verifyRegisteringAccountNoNewsLetterSelected() {
 
 		driver.findElement(By.id("input-firstname")).sendKeys("Rehan");
 		driver.findElement(By.id("input-lastname")).sendKeys("hassan");
@@ -42,7 +52,5 @@ public class TC_RF_006 {
 		driver.quit();
 
 	}
-
-	
 
 }

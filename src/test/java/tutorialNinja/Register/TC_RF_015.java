@@ -1,38 +1,36 @@
 package tutorialNinja.Register;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import base.Base;
 import utils.CommonUtils;
 
-public class TC_RF_015 {
+public class TC_RF_015 extends Base {
+
+	WebDriver driver;
+
+	@BeforeMethod
+	public void setup() {
+		driver = openBrowserAndApplication();
+		driver.findElement(By.xpath("//span[text()='My Account']")).click();
+		driver.findElement(By.linkText("Register")).click();
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
 
 	@Test(dataProvider = "environmentSupplier")
 	public void verifyRegisteringWithDifferentTestEnvironments(String env) {
-		WebDriver driver = null;
-		String browserName = env;
-		if (browserName.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browserName.equals("firefox")) {
-			driver = new FirefoxDriver();
-		} else if (browserName.equals("edge")) {
-			driver = new EdgeDriver();
-		}
-
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/");
-
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Register")).click();
+		//WebDriver driver = null;
+		//String browserName = env;
 
 		driver.findElement(By.id("input-firstname")).sendKeys("Rehan");
 		driver.findElement(By.id("input-lastname")).sendKeys("hassan");
