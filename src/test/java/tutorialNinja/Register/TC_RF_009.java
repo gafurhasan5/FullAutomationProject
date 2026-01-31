@@ -1,12 +1,10 @@
 package tutorialNinja.Register;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,7 +13,7 @@ import org.testng.annotations.Test;
 import base.Base;
 import utils.CommonUtils;
 
-public class TC_RF__009 extends Base {
+public class TC_RF_009 extends Base {
 	WebDriver driver;
 	Properties prop;
 

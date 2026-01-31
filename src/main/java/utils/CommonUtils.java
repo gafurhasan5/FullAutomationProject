@@ -32,8 +32,8 @@ public class CommonUtils {
 		Properties prop = new Properties();
 		FileReader filereader;
 		try {
-			filereader = new FileReader(
-					"C:\\FullAutomationLiveProject\\FullAutomationProject\\src\\test\\resources\\projectdata.properties");
+			filereader = new FileReader("C:\\FullAutomationLiveProject\\FullAutomationProject\\src\\test\\resources\\projectdata.properties");
+			
 			prop.load(filereader);
 		} catch (FileNotFoundException e) {
 
