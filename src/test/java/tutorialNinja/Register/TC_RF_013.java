@@ -10,16 +10,21 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pages.HomePage;
+import pages.RegisterPage;
 
 public class TC_RF_013 extends Base {
 
 	WebDriver driver;
+	HomePage homepage;
+	RegisterPage registerpage;
 
 	@BeforeMethod
 	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Register")).click();
+		homepage = new HomePage(driver);
+		homepage.clickOnMyAccountDropMenu();
+		homepage.selectRegisterOption();
 	}
 
 	@AfterMethod

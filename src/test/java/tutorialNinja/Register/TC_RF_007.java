@@ -3,7 +3,6 @@ package tutorialNinja.Register;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,19 +10,32 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pages.AccountPage;
+import pages.AccountSuccessPage;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.RegisterPage;
 import utils.CommonUtils;
 
 public class TC_RF_007 extends Base {
 
 	WebDriver driver;
 	Properties prop;
+	HomePage homepage;
+	RegisterPage registerpage;
+	AccountSuccessPage accountsuccesspage;
+	AccountPage accountpage;
+	LoginPage loginpage;
 
 	@BeforeMethod
 	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
-		prop=CommonUtils.loadProperties();
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Register")).click();
+		prop = CommonUtils.loadProperties();
+		homepage = new HomePage(driver);
+		homepage.clickOnMyAccountDropMenu();
+		homepage.selectRegisterOption();
+		registerpage = new RegisterPage(driver);
+
 	}
 
 	@AfterMethod
@@ -32,21 +44,21 @@ public class TC_RF_007 extends Base {
 	}
 
 	@Test
-	public void verifyNavigatingToRegisterAccountinMultipleWays() {
+	public void verifyNavigatingToRegisterAccountinMultipleWays() throws InterruptedException {
+		Thread.sleep(100);
+		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
 
-		Assert.assertTrue(
-				driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Register']")).isDisplayed());
+		registerpage.clickMyAccountMenuOnRegisterPage();
 
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.xpath("//li/a[text()='Login']")).click();
-		driver.findElement(By.xpath("//a[@class='btn btn-primary'][text()='Continue']")).click();
-		Assert.assertTrue(
-				driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Register']")).isDisplayed());
+		loginpage = registerpage.clickMyAccountLoginRegisterPage();
+		loginpage.selectContinueButtonOnLoginPage();
+		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
+		loginpage = registerpage.clickMyAccountLoginRegisterPage();
+		loginpage.selectContinueButtonOnLoginPage();
 
-		driver.findElement(By.xpath(" //a[@class='list-group-item'][text()='Register']")).click();
-		Assert.assertTrue(
-				driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Register']")).isDisplayed());
-		driver.quit();
+		loginpage.clickRegisterOptionOnSideLoginPage();
+
+		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
 
 	}
 

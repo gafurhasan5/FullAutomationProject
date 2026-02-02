@@ -11,19 +11,29 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pages.AccountPage;
+import pages.AccountSuccessPage;
+import pages.HomePage;
+import pages.NewsLetterPage;
+import pages.RegisterPage;
 import utils.CommonUtils;
 
 public class TC_RF_006 extends Base {
 
 	WebDriver driver;
 	 Properties prop;
-
+	 HomePage homepage;
+		RegisterPage registerpage;
+		AccountSuccessPage accountsuccesspage;
+		AccountPage accountpage;
+		NewsLetterPage newsletterpage;
 	@BeforeMethod
 	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
 		prop=CommonUtils.loadProperties();
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Register")).click();
+		homepage = new HomePage(driver);
+		homepage.clickOnMyAccountDropMenu();
+		homepage.selectRegisterOption();
 	}
 
 	@AfterMethod
@@ -34,24 +44,22 @@ public class TC_RF_006 extends Base {
 	@Test
 	public void verifyRegisteringAccountNoNewsLetterSelected() {
 
-		driver.findElement(By.id("input-firstname")).sendKeys(prop.getProperty("FirstName"));
-		driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("LastName")); 
-		driver.findElement(By.id("input-email")).sendKeys(CommonUtils.getTimestampEmail());
-		driver.findElement(By.id("input-telephone")).sendKeys(prop.getProperty("PhoneNum"));
-		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("Password"));
-		driver.findElement(By.id("input-confirm")).sendKeys(prop.getProperty("Password"));
+		registerpage = new RegisterPage(driver);
+		registerpage.enterFirstName(prop.getProperty("FirstName"));
+		registerpage.enterSecondName(prop.getProperty("LastName"));
+		registerpage.enterEmail(CommonUtils.getTimestampEmail());
+		registerpage.enterPhone(prop.getProperty("PhoneNum"));
+		registerpage.enterPassword(prop.getProperty("Password"));
+		registerpage.enterConPassword(prop.getProperty("Password"));
+		registerpage.noSelectNewsLetter();
 
-		driver.findElement(By.xpath("//input[@name='newsletter'][@value='0']")).click();
-		driver.findElement(By.name("agree")).click();
-		driver.findElement(By.xpath("//input[@value='Continue']")).click();
 
-		driver.findElement(By.linkText("Continue")).click();
-		driver.findElement(By.xpath("//a[text()='Subscribe / unsubscribe to newsletter']")).click();
-		Assert.assertTrue(
-				driver.findElement(By.xpath("//ul[@class='breadcrumb']//a[text()='Newsletter']")).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.xpath("//input[@name='newsletter'][@value='0']")).isSelected());
-
-		driver.quit();
+		registerpage.SelectPrivacyPolicy();
+		accountsuccesspage = registerpage.clickContinueButton();
+		accountpage=accountsuccesspage.clickContinueButton();
+		newsletterpage = accountpage.selectsubscribeUnsubscribeNewsLetter();
+        Assert.assertTrue(newsletterpage.navigateToNewsLetterPage());
+		Assert.assertTrue(newsletterpage.isNoNewsLetterOptionSelected());
 
 	}
 

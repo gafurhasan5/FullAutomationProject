@@ -43,5 +43,14 @@ public class AccountSuccessPage {
 		continueButtonField.click();
 		return new AccountPage(driver);
 	}
+	@FindBy(xpath = "//ul[@class='breadcrumb']//a[text()='Success']")
+	private WebElement successAccountBreadcrumb;
+
+	public boolean getSuccessAccountBreadcrumb() // continue button it goes to accounpage that why i return accuntpage
+												// object
+	{
+		return successAccountBreadcrumb.isDisplayed();
+	}
+
 
 }
