@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tutorialNinja.Register.TC_RF_012">
+      <class name="tutorialNinja.Register.TC_RF_013">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyRegisteringAccountUsingKeyboarkey"/>
           <include name="setup"/>
+          <include name="verifyPlaceHoldersOfTextFieldsInRegisterPage"/>
         </methods>
-      </class> <!-- tutorialNinja.Register.TC_RF_012 -->
+      </class> <!-- tutorialNinja.Register.TC_RF_013 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

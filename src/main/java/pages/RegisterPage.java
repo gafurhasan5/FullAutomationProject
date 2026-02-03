@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -172,16 +173,14 @@ public class RegisterPage {
 
 	}
 
-	
-	
-	@FindBy(linkText="Login")
+	@FindBy(linkText = "Login")
 	private WebElement myAccountLoginRegisterPage;
 
 	public LoginPage clickMyAccountLoginRegisterPage()
 
 	{
-		 myAccountLoginRegisterPage.click();
-		 return new LoginPage(driver);
+		myAccountLoginRegisterPage.click();
+		return new LoginPage(driver);
 
 	}
 
@@ -192,7 +191,6 @@ public class RegisterPage {
 		loginOptionOnRegisterPage.click();
 	}
 
-	
 	@FindBy(xpath = "//div[@class='text-danger' and text()='Password confirmation does not match password!']")
 	private WebElement passwordWarningMisMatch;
 
@@ -202,6 +200,7 @@ public class RegisterPage {
 		return passwordWarningMisMatch.getText();
 
 	}
+
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	private WebElement existingEmailWarning;
 
@@ -211,15 +210,56 @@ public class RegisterPage {
 		return existingEmailWarning.getText();
 
 	}
+
 	@FindBy(xpath = "//div[@class='text-danger'][text()='Telephone must be between 3 and 32 characters!']")
 	private WebElement telePhoneWarningMatch;
 
 	public String getTelePhoneWarningMatch()
 
 	{
-		return  telePhoneWarningMatch.getText();
+		return telePhoneWarningMatch.getText();
 
 	}
 
+	@FindBy(id = "input-firstname")
+	private WebElement PlaceHonderFirstNametext;
+
+	public String getPlaceHonderFirstNametext()
+
+	{
+		return PlaceHonderFirstNametext.getAttribute("placeholder");
+
+	}
+
+	@FindBy(id = "input-lastname")
+	private WebElement PlaceHonderLastNametext;
+
+	public String getPlaceHonderSecondNametext()
+
+	{
+		return PlaceHonderLastNametext.getAttribute("placeholder");
+
+	}
+
+	@FindBy(css = "label[for='input-firstname']")
+	private WebElement FirstNameLabel;
+
+	public String FirstNameLabelText(WebDriver driver)
+
+	{
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		String fnContent = (String) jse.executeScript(
+				"return window.getComputedStyle(arguments[0],'::before').getPropertyValue('content')", FirstNameLabel);
+		return fnContent;
+	}
+
+	public String firstNameLabelColor(WebDriver driver)
+
+	{
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		String fnColor = (String) jse.executeScript(
+				"return window.getComputedStyle(arguments[0],'::before').getPropertyValue('color')", FirstNameLabel);
+		return fnColor;
+	}
 
 }

@@ -2,7 +2,6 @@ package tutorialNinja.Register;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -25,6 +24,7 @@ public class TC_RF_013 extends Base {
 		homepage = new HomePage(driver);
 		homepage.clickOnMyAccountDropMenu();
 		homepage.selectRegisterOption();
+		registerpage=new RegisterPage(driver);
 	}
 
 	@AfterMethod
@@ -36,10 +36,10 @@ public class TC_RF_013 extends Base {
 	public void verifyPlaceHoldersOfTextFieldsInRegisterPage() {
 
 		String expectedFirstNamePlaceHolderText = "First Name";
-		Assert.assertEquals(driver.findElement(By.id("input-firstname")).getAttribute("placeholder"),
+		Assert.assertEquals(registerpage.getPlaceHonderFirstNametext(),
 				expectedFirstNamePlaceHolderText);
 		String expectedLastNamePlaceHolderText = "Last Name";
-		Assert.assertEquals(driver.findElement(By.id("input-lastname")).getAttribute("placeholder"),
+		Assert.assertEquals(registerpage.getPlaceHonderSecondNametext(),
 				expectedLastNamePlaceHolderText);
 	}
 }

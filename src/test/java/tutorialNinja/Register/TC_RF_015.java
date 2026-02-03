@@ -3,7 +3,6 @@ package tutorialNinja.Register;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -12,18 +11,27 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pages.AccountPage;
+import pages.AccountSuccessPage;
+import pages.HomePage;
+import pages.RegisterPage;
 import utils.CommonUtils;
 
 public class TC_RF_015 extends Base {
 
 	WebDriver driver;
 	 Properties prop;
+	 HomePage homepage;
+		RegisterPage registerpage;
+		AccountSuccessPage accountsuccesspage;
+		AccountPage accountpage;
 	@BeforeMethod
 	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
 		prop=CommonUtils.loadProperties();
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Register")).click();
+		homepage = new HomePage(driver);
+		homepage.clickOnMyAccountDropMenu();
+		homepage.selectRegisterOption();
 	}
 
 	@AfterMethod
@@ -36,23 +44,22 @@ public class TC_RF_015 extends Base {
 		//WebDriver driver = null;
 		//String browserName = env;
 
-		driver.findElement(By.id("input-firstname")).sendKeys(prop.getProperty("FirstName"));
-		driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("LastName")); 
-		driver.findElement(By.id("input-email")).sendKeys(CommonUtils.getTimestampEmail());
-		driver.findElement(By.id("input-telephone")).sendKeys(prop.getProperty("PhoneNum"));
-		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("Password"));
-		driver.findElement(By.id("input-confirm")).sendKeys(prop.getProperty("Password"));
-		driver.findElement(By.name("agree")).click();
-		driver.findElement(By.xpath("//input[@value='Continue']")).click();
+		registerpage = new RegisterPage(driver);
+		registerpage.enterFirstName(prop.getProperty("FirstName"));
+		registerpage.enterSecondName(prop.getProperty("LastName"));
+		registerpage.enterEmail(CommonUtils.getTimestampEmail());
+		registerpage.enterPhone(prop.getProperty("PhoneNum"));
+		registerpage.enterPassword(prop.getProperty("Password"));
+		registerpage.enterConPassword(prop.getProperty("Password"));
+		registerpage.SelectPrivacyPolicy();
+		accountsuccesspage = registerpage.clickContinueButton();
 
-		Assert.assertEquals("Congratulations! Your new account has been successfully created!",
-				driver.findElement(
-						By.xpath("//p[contains(text(),'Congratulations! Your new account has been success')]"))
-						.getText());
-		// Assert.assertTrue(driver.findElement(By.linkText("Edit your account
-		// information")).isDisplayed());
+		Assert.assertTrue(accountsuccesspage.displaylogoutOption());
+		Assert.assertTrue(accountsuccesspage.getSuccessAccountBreadcrumb());
+		
 
-		driver.quit();
+		
+
 
 	}
 

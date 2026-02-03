@@ -1,25 +1,292 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="16" passed="15" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-02T23:24:09 IST" name="Default suite" finished-at="2026-02-02T23:24:34 IST" duration-ms="25831">
+  <suite started-at="2026-02-03T12:17:55 IST" name="Suite" finished-at="2026-02-03T12:20:14 IST" duration-ms="139788">
     <groups>
     </groups>
-    <test started-at="2026-02-02T23:24:09 IST" name="Default test" finished-at="2026-02-02T23:24:34 IST" duration-ms="25831">
-      <class name="tutorialNinja.Register.TC_RF_012">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_012@1bd4fdd]" started-at="2026-02-02T23:24:09 IST" name="setup" finished-at="2026-02-02T23:24:15 IST" duration-ms="6081" status="PASS">
+    <test started-at="2026-02-03T12:17:55 IST" name="Test" finished-at="2026-02-03T12:20:14 IST" duration-ms="139788">
+      <class name="tutorialNinja.Register.TC_RF_006">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_006@662ac478]" started-at="2026-02-03T12:18:26 IST" name="setup" finished-at="2026-02-03T12:18:32 IST" duration-ms="5321" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisteringAccountUsingKeyboarkey()[pri:0, instance:tutorialNinja.Register.TC_RF_012@1bd4fdd]" started-at="2026-02-02T23:24:15 IST" name="verifyRegisteringAccountUsingKeyboarkey" finished-at="2026-02-02T23:24:34 IST" duration-ms="19079" status="PASS">
+        <test-method signature="verifyRegisteringAccountNoNewsLetterSelected()[pri:0, instance:tutorialNinja.Register.TC_RF_006@662ac478]" started-at="2026-02-03T12:18:32 IST" name="verifyRegisteringAccountNoNewsLetterSelected" finished-at="2026-02-03T12:18:35 IST" duration-ms="3336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringAccountNoNewsLetterSelected -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_006@662ac478]" started-at="2026-02-03T12:18:35 IST" name="tearDown" finished-at="2026-02-03T12:18:35 IST" duration-ms="537" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_006 -->
+      <class name="tutorialNinja.Register.TC_RF_007">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_007@6743e411]" started-at="2026-02-03T12:18:35 IST" name="setup" finished-at="2026-02-03T12:18:42 IST" duration-ms="6487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyNavigatingToRegisterAccountinMultipleWays()[pri:0, instance:tutorialNinja.Register.TC_RF_007@6743e411]" started-at="2026-02-03T12:18:42 IST" name="verifyNavigatingToRegisterAccountinMultipleWays" finished-at="2026-02-03T12:18:44 IST" duration-ms="2356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigatingToRegisterAccountinMultipleWays -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_007@6743e411]" started-at="2026-02-03T12:18:44 IST" name="tearDown" finished-at="2026-02-03T12:18:45 IST" duration-ms="491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_007 -->
+      <class name="tutorialNinja.Register.TC_RF_015">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:19:52 IST" name="setup" finished-at="2026-02-03T12:19:57 IST" duration-ms="4610" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringWithDifferentTestEnvironments(java.lang.String)[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:19:57 IST" name="verifyRegisteringWithDifferentTestEnvironments" data-provider="environmentSupplier" finished-at="2026-02-03T12:19:59 IST" duration-ms="1861" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringWithDifferentTestEnvironments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:19:59 IST" name="tearDown" finished-at="2026-02-03T12:19:59 IST" duration-ms="385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:19:59 IST" name="setup" finished-at="2026-02-03T12:20:05 IST" duration-ms="5637" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringWithDifferentTestEnvironments(java.lang.String)[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:20:05 IST" name="verifyRegisteringWithDifferentTestEnvironments" data-provider="environmentSupplier" finished-at="2026-02-03T12:20:08 IST" duration-ms="2594" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringWithDifferentTestEnvironments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:20:08 IST" name="tearDown" finished-at="2026-02-03T12:20:08 IST" duration-ms="408" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:20:08 IST" name="setup" finished-at="2026-02-03T12:20:12 IST" duration-ms="4294" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringWithDifferentTestEnvironments(java.lang.String)[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:20:12 IST" name="verifyRegisteringWithDifferentTestEnvironments" data-provider="environmentSupplier" finished-at="2026-02-03T12:20:14 IST" duration-ms="1882" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringWithDifferentTestEnvironments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_015@1e800aaa]" started-at="2026-02-03T12:20:14 IST" name="tearDown" finished-at="2026-02-03T12:20:14 IST" duration-ms="380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_015 -->
+      <class name="tutorialNinja.Register.TC_RF_004">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_004@229f66ed]" started-at="2026-02-03T12:18:12 IST" name="setup" finished-at="2026-02-03T12:18:16 IST" duration-ms="4369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringWithoutAnyFields()[pri:0, instance:tutorialNinja.Register.TC_RF_004@229f66ed]" started-at="2026-02-03T12:18:16 IST" name="verifyRegisteringWithoutAnyFields" finished-at="2026-02-03T12:18:18 IST" duration-ms="1222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringWithoutAnyFields -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_004@229f66ed]" started-at="2026-02-03T12:18:18 IST" name="tearDown" finished-at="2026-02-03T12:18:18 IST" duration-ms="397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_004 -->
+      <class name="tutorialNinja.Register.TC_RF_005">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_005@31190526]" started-at="2026-02-03T12:18:18 IST" name="setup" finished-at="2026-02-03T12:18:23 IST" duration-ms="4744" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringAccountYesNewsLetterSelected()[pri:0, instance:tutorialNinja.Register.TC_RF_005@31190526]" started-at="2026-02-03T12:18:23 IST" name="verifyRegisteringAccountYesNewsLetterSelected" finished-at="2026-02-03T12:18:26 IST" duration-ms="3026" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringAccountYesNewsLetterSelected -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_005@31190526]" started-at="2026-02-03T12:18:26 IST" name="tearDown" finished-at="2026-02-03T12:18:26 IST" duration-ms="407" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_005 -->
+      <class name="tutorialNinja.Register.TC_RF_008">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_008@3eb25e1a]" started-at="2026-02-03T12:18:45 IST" name="setup" finished-at="2026-02-03T12:18:50 IST" duration-ms="5531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringAccountToMisMatchPassword()[pri:0, instance:tutorialNinja.Register.TC_RF_008@3eb25e1a]" started-at="2026-02-03T12:18:50 IST" name="verifyRegisteringAccountToMisMatchPassword" finished-at="2026-02-03T12:18:53 IST" duration-ms="2419" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringAccountToMisMatchPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_008@3eb25e1a]" started-at="2026-02-03T12:18:53 IST" name="tearDown" finished-at="2026-02-03T12:18:53 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_008 -->
+      <class name="tutorialNinja.Register.TC_RF_009">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_009@477b4cdf]" started-at="2026-02-03T12:18:53 IST" name="setup" finished-at="2026-02-03T12:18:59 IST" duration-ms="5988" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringAccountProvidingtheExistingEmail()[pri:0, instance:tutorialNinja.Register.TC_RF_009@477b4cdf]" started-at="2026-02-03T12:18:59 IST" name="verifyRegisteringAccountProvidingtheExistingEmail" finished-at="2026-02-03T12:19:00 IST" duration-ms="1732" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringAccountProvidingtheExistingEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_009@477b4cdf]" started-at="2026-02-03T12:19:00 IST" name="tearDown" finished-at="2026-02-03T12:19:01 IST" duration-ms="462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_009 -->
+      <class name="tutorialNinja.Register.TC_RF_010">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_010@77c2494c]" started-at="2026-02-03T12:19:01 IST" name="setup" finished-at="2026-02-03T12:19:07 IST" duration-ms="6458" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringAccountWithInvalidEmail()[pri:0, instance:tutorialNinja.Register.TC_RF_010@77c2494c]" started-at="2026-02-03T12:19:07 IST" name="verifyRegisteringAccountWithInvalidEmail" finished-at="2026-02-03T12:19:10 IST" duration-ms="2986" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertFalse(Assert.java:79)
+at org.testng.Assert.assertFalse(Assert.java:89)
+at tutorialNinja.Register.TC_RF_010.verifyRegisteringAccountWithInvalidEmail(TC_RF_010.java:60)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringAccountWithInvalidEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_010@77c2494c]" started-at="2026-02-03T12:19:10 IST" name="tearDown" finished-at="2026-02-03T12:19:11 IST" duration-ms="533" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_010 -->
+      <class name="tutorialNinja.Register.TC_RF_013">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_013@3eb738bb]" started-at="2026-02-03T12:19:43 IST" name="setup" finished-at="2026-02-03T12:19:47 IST" duration-ms="3897" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyPlaceHoldersOfTextFieldsInRegisterPage()[pri:0, instance:tutorialNinja.Register.TC_RF_013@3eb738bb]" started-at="2026-02-03T12:19:47 IST" name="verifyPlaceHoldersOfTextFieldsInRegisterPage" finished-at="2026-02-03T12:19:47 IST" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPlaceHoldersOfTextFieldsInRegisterPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_013@3eb738bb]" started-at="2026-02-03T12:19:47 IST" name="tearDown" finished-at="2026-02-03T12:19:47 IST" duration-ms="323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_013 -->
+      <class name="tutorialNinja.Register.TC_RF_014">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_014@5bda8e08]" started-at="2026-02-03T12:19:47 IST" name="setup" finished-at="2026-02-03T12:19:52 IST" duration-ms="4763" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringWithMandatoryFieldsSymbolAndColorInRegisterPage()[pri:0, instance:tutorialNinja.Register.TC_RF_014@5bda8e08]" started-at="2026-02-03T12:19:52 IST" name="verifyRegisteringWithMandatoryFieldsSymbolAndColorInRegisterPage" finished-at="2026-02-03T12:19:52 IST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringWithMandatoryFieldsSymbolAndColorInRegisterPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_014@5bda8e08]" started-at="2026-02-03T12:19:52 IST" name="tearDown" finished-at="2026-02-03T12:19:52 IST" duration-ms="450" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_014 -->
+      <class name="tutorialNinja.Register.TC_RF_003">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_003@7dcf94f8]" started-at="2026-02-03T12:18:05 IST" name="setup" finished-at="2026-02-03T12:18:09 IST" duration-ms="4497" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringWithAllFields()[pri:0, instance:tutorialNinja.Register.TC_RF_003@7dcf94f8]" started-at="2026-02-03T12:18:09 IST" name="verifyRegisteringWithAllFields" finished-at="2026-02-03T12:18:12 IST" duration-ms="2505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringWithAllFields -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_003@7dcf94f8]" started-at="2026-02-03T12:18:12 IST" name="tearDown" finished-at="2026-02-03T12:18:12 IST" duration-ms="411" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_003 -->
+      <class name="tutorialNinja.Register.TC_RF_011">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_011@f5958c9]" started-at="2026-02-03T12:19:11 IST" name="setup" finished-at="2026-02-03T12:19:16 IST" duration-ms="5318" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringAccountInvalidMobileNumber()[pri:0, instance:tutorialNinja.Register.TC_RF_011@f5958c9]" started-at="2026-02-03T12:19:16 IST" name="verifyRegisteringAccountInvalidMobileNumber" finished-at="2026-02-03T12:19:18 IST" duration-ms="2032" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringAccountInvalidMobileNumber -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_011@f5958c9]" started-at="2026-02-03T12:19:18 IST" name="tearDown" finished-at="2026-02-03T12:19:19 IST" duration-ms="582" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_011 -->
+      <class name="tutorialNinja.Register.TC_RF_012">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_012@233795b6]" started-at="2026-02-03T12:19:19 IST" name="setup" finished-at="2026-02-03T12:19:24 IST" duration-ms="5544" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringAccountUsingKeyboarkey()[pri:0, instance:tutorialNinja.Register.TC_RF_012@233795b6]" started-at="2026-02-03T12:19:24 IST" name="verifyRegisteringAccountUsingKeyboarkey" finished-at="2026-02-03T12:19:42 IST" duration-ms="17918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegisteringAccountUsingKeyboarkey -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_012@1bd4fdd]" started-at="2026-02-02T23:24:34 IST" name="tearDown" finished-at="2026-02-02T23:24:34 IST" duration-ms="558" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_012@233795b6]" started-at="2026-02-03T12:19:42 IST" name="tearDown" finished-at="2026-02-03T12:19:43 IST" duration-ms="533" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tutorialNinja.Register.TC_RF_012 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="tutorialNinja.Register.TC_RF_001">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tutorialNinja.Register.TC_RF_001@33d512c1]" started-at="2026-02-03T12:17:55 IST" name="setup" finished-at="2026-02-03T12:18:01 IST" duration-ms="6419" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisteringWithMandatoryFields()[pri:0, instance:tutorialNinja.Register.TC_RF_001@33d512c1]" started-at="2026-02-03T12:18:01 IST" name="verifyRegisteringWithMandatoryFields" finished-at="2026-02-03T12:18:04 IST" duration-ms="3008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringWithMandatoryFields -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tutorialNinja.Register.TC_RF_001@33d512c1]" started-at="2026-02-03T12:18:04 IST" name="tearDown" finished-at="2026-02-03T12:18:05 IST" duration-ms="448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tutorialNinja.Register.TC_RF_001 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
