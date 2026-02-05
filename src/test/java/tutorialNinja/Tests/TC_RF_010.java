@@ -1,4 +1,4 @@
-package tutorialNinja.Register;
+package tutorialNinja.Tests;
 
 import java.io.File;
 import java.io.IOException;

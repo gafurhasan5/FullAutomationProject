@@ -25,6 +25,13 @@ public class HomePage {
 	public void selectRegisterOption() {
 		ClickOnRegisterButton.click();
 	}
+	@FindBy(linkText = "Login")
+	private WebElement clickLoginButton;
+
+	public LoginPage selectLoginOption() {
+		clickLoginButton.click();
+		return new LoginPage(driver);
+	}
 
 
 

@@ -1,4 +1,4 @@
-package tutorialNinja.Register;
+package tutorialNinja.Tests;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -13,11 +13,10 @@ import base.Base;
 import pages.AccountPage;
 import pages.AccountSuccessPage;
 import pages.HomePage;
-import pages.NewsLetterPage;
 import pages.RegisterPage;
 import utils.CommonUtils;
 
-public class TC_RF_005 extends Base {
+public class TC_RF_008 extends Base {
 
 	WebDriver driver;
 	Properties prop;
@@ -25,7 +24,6 @@ public class TC_RF_005 extends Base {
 	RegisterPage registerpage;
 	AccountSuccessPage accountsuccesspage;
 	AccountPage accountpage;
-	NewsLetterPage newsletterpage;
 
 	@BeforeMethod
 	public void setup() throws IOException {
@@ -42,7 +40,7 @@ public class TC_RF_005 extends Base {
 	}
 
 	@Test
-	public void verifyRegisteringAccountYesNewsLetterSelected() {
+	public void verifyRegisteringAccountToMisMatchPassword() {
 
 		registerpage = new RegisterPage(driver);
 		registerpage.enterFirstName(prop.getProperty("FirstName"));
@@ -50,14 +48,15 @@ public class TC_RF_005 extends Base {
 		registerpage.enterEmail(CommonUtils.getTimestampEmail());
 		registerpage.enterPhone(prop.getProperty("PhoneNum"));
 		registerpage.enterPassword(prop.getProperty("Password"));
-		registerpage.enterConPassword(prop.getProperty("Password"));
-		registerpage.selectNewsLetter();
+		registerpage.enterConPassword(prop.getProperty("ConfirmPassword"));
 		registerpage.SelectPrivacyPolicy();
-		accountsuccesspage = registerpage.clickContinueButton();
-		accountpage=accountsuccesspage.clickContinueButton();
-		newsletterpage = accountpage.selectsubscribeUnsubscribeNewsLetter();
-        Assert.assertTrue(newsletterpage.navigateToNewsLetterPage());
-		Assert.assertTrue(newsletterpage.isYesNewsoNewsLetterOptionSelected());
+		registerpage.clickContinueButton();
+
+		String actualWarningMsg = "Password confirmation does not match password!";
+
+		String WarningMsg = registerpage.getPasswordWarningMisMatch();
+		Assert.assertTrue(actualWarningMsg.contains(WarningMsg));
+		driver.quit();
 
 	}
 

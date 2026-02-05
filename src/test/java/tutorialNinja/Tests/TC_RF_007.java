@@ -1,4 +1,4 @@
-package tutorialNinja.Register;
+package tutorialNinja.Tests;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -13,10 +13,11 @@ import base.Base;
 import pages.AccountPage;
 import pages.AccountSuccessPage;
 import pages.HomePage;
+import pages.LoginPage;
 import pages.RegisterPage;
 import utils.CommonUtils;
 
-public class TC_RF_008 extends Base {
+public class TC_RF_007 extends Base {
 
 	WebDriver driver;
 	Properties prop;
@@ -24,6 +25,7 @@ public class TC_RF_008 extends Base {
 	RegisterPage registerpage;
 	AccountSuccessPage accountsuccesspage;
 	AccountPage accountpage;
+	LoginPage loginpage;
 
 	@BeforeMethod
 	public void setup() throws IOException {
@@ -32,6 +34,8 @@ public class TC_RF_008 extends Base {
 		homepage = new HomePage(driver);
 		homepage.clickOnMyAccountDropMenu();
 		homepage.selectRegisterOption();
+		registerpage = new RegisterPage(driver);
+
 	}
 
 	@AfterMethod
@@ -40,23 +44,21 @@ public class TC_RF_008 extends Base {
 	}
 
 	@Test
-	public void verifyRegisteringAccountToMisMatchPassword() {
+	public void verifyNavigatingToRegisterAccountinMultipleWays() throws InterruptedException {
+		Thread.sleep(100);
+		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
 
-		registerpage = new RegisterPage(driver);
-		registerpage.enterFirstName(prop.getProperty("FirstName"));
-		registerpage.enterSecondName(prop.getProperty("LastName"));
-		registerpage.enterEmail(CommonUtils.getTimestampEmail());
-		registerpage.enterPhone(prop.getProperty("PhoneNum"));
-		registerpage.enterPassword(prop.getProperty("Password"));
-		registerpage.enterConPassword(prop.getProperty("ConfirmPassword"));
-		registerpage.SelectPrivacyPolicy();
-		registerpage.clickContinueButton();
+		registerpage.clickMyAccountMenuOnRegisterPage();
 
-		String actualWarningMsg = "Password confirmation does not match password!";
+		loginpage = registerpage.clickMyAccountLoginRegisterPage();
+		loginpage.selectContinueButtonOnLoginPage();
+		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
+		loginpage = registerpage.clickMyAccountLoginRegisterPage();
+		loginpage.selectContinueButtonOnLoginPage();
 
-		String WarningMsg = registerpage.getPasswordWarningMisMatch();
-		Assert.assertTrue(actualWarningMsg.contains(WarningMsg));
-		driver.quit();
+		loginpage.clickRegisterOptionOnSideLoginPage();
+
+		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
 
 	}
 

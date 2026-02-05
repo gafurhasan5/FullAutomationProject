@@ -1,4 +1,4 @@
-package tutorialNinja.Register;
+package tutorialNinja.Tests;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import base.Base;
 import pages.HomePage;
 import pages.RegisterPage;
 
-public class TC_RF_014 extends Base {
+public class TC_RF_013 extends Base {
 
 	WebDriver driver;
 	HomePage homepage;
@@ -24,7 +24,7 @@ public class TC_RF_014 extends Base {
 		homepage = new HomePage(driver);
 		homepage.clickOnMyAccountDropMenu();
 		homepage.selectRegisterOption();
-		registerpage = new RegisterPage(driver);
+		registerpage=new RegisterPage(driver);
 	}
 
 	@AfterMethod
@@ -33,12 +33,13 @@ public class TC_RF_014 extends Base {
 	}
 
 	@Test
-	public void verifyRegisteringWithMandatoryFieldsSymbolAndColorInRegisterPage() {
+	public void verifyPlaceHoldersOfTextFieldsInRegisterPage() {
 
-		String expectedContent = "\"* \"";
-		String expectedColor = "rgb(255, 0, 0)";
-		Assert.assertEquals(registerpage.FirstNameLabelText(driver), expectedContent);
-		Assert.assertEquals(registerpage.firstNameLabelColor(driver), expectedColor);
-
+		String expectedFirstNamePlaceHolderText = "First Name";
+		Assert.assertEquals(registerpage.getPlaceHonderFirstNametext(),
+				expectedFirstNamePlaceHolderText);
+		String expectedLastNamePlaceHolderText = "Last Name";
+		Assert.assertEquals(registerpage.getPlaceHonderSecondNametext(),
+				expectedLastNamePlaceHolderText);
 	}
 }

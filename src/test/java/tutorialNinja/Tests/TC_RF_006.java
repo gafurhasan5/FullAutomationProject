@@ -1,4 +1,4 @@
-package tutorialNinja.Register;
+package tutorialNinja.Tests;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -10,20 +10,26 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import base.Base;
+import pages.AccountPage;
+import pages.AccountSuccessPage;
 import pages.HomePage;
+import pages.NewsLetterPage;
 import pages.RegisterPage;
 import utils.CommonUtils;
 
-public class TC_RF_009 extends Base {
-	WebDriver driver;
-	Properties prop;
-	HomePage homepage;
-	RegisterPage registerpage;
+public class TC_RF_006 extends Base {
 
+	WebDriver driver;
+	 Properties prop;
+	 HomePage homepage;
+		RegisterPage registerpage;
+		AccountSuccessPage accountsuccesspage;
+		AccountPage accountpage;
+		NewsLetterPage newsletterpage;
 	@BeforeMethod
 	public void setup() throws IOException {
 		driver = openBrowserAndApplication();
-		prop = CommonUtils.loadProperties();
+		prop=CommonUtils.loadProperties();
 		homepage = new HomePage(driver);
 		homepage.clickOnMyAccountDropMenu();
 		homepage.selectRegisterOption();
@@ -35,24 +41,24 @@ public class TC_RF_009 extends Base {
 	}
 
 	@Test
-	public void verifyRegisteringAccountProvidingtheExistingEmail() {
+	public void verifyRegisteringAccountNoNewsLetterSelected() {
 
 		registerpage = new RegisterPage(driver);
 		registerpage.enterFirstName(prop.getProperty("FirstName"));
 		registerpage.enterSecondName(prop.getProperty("LastName"));
-		registerpage.enterEmail("rehankhan56390@gmail.com");
+		registerpage.enterEmail(CommonUtils.getTimestampEmail());
 		registerpage.enterPhone(prop.getProperty("PhoneNum"));
 		registerpage.enterPassword(prop.getProperty("Password"));
 		registerpage.enterConPassword(prop.getProperty("Password"));
+		registerpage.noSelectNewsLetter();
+
+
 		registerpage.SelectPrivacyPolicy();
-	    registerpage.clickContinueButton();
-
-		String actualWarningMsg = "Warning: E-Mail Address is already registered!";
-		String WarningMsg =registerpage.getExistingEmailWarning();
-
-		Assert.assertTrue(actualWarningMsg.contains(WarningMsg));
-
-
+		accountsuccesspage = registerpage.clickContinueButton();
+		accountpage=accountsuccesspage.clickContinueButton();
+		newsletterpage = accountpage.selectsubscribeUnsubscribeNewsLetter();
+        Assert.assertTrue(newsletterpage.navigateToNewsLetterPage());
+		Assert.assertTrue(newsletterpage.isNoNewsLetterOptionSelected());
 
 	}
 

@@ -1,8 +1,9 @@
-package tutorialNinja.Register;
+package tutorialNinja.Tests;
 
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -13,11 +14,10 @@ import base.Base;
 import pages.AccountPage;
 import pages.AccountSuccessPage;
 import pages.HomePage;
-import pages.LoginPage;
 import pages.RegisterPage;
 import utils.CommonUtils;
 
-public class TC_RF_007 extends Base {
+public class TC_RF_012 extends Base {
 
 	WebDriver driver;
 	Properties prop;
@@ -25,7 +25,6 @@ public class TC_RF_007 extends Base {
 	RegisterPage registerpage;
 	AccountSuccessPage accountsuccesspage;
 	AccountPage accountpage;
-	LoginPage loginpage;
 
 	@BeforeMethod
 	public void setup() throws IOException {
@@ -34,8 +33,6 @@ public class TC_RF_007 extends Base {
 		homepage = new HomePage(driver);
 		homepage.clickOnMyAccountDropMenu();
 		homepage.selectRegisterOption();
-		registerpage = new RegisterPage(driver);
-
 	}
 
 	@AfterMethod
@@ -44,21 +41,15 @@ public class TC_RF_007 extends Base {
 	}
 
 	@Test
-	public void verifyNavigatingToRegisterAccountinMultipleWays() throws InterruptedException {
-		Thread.sleep(100);
-		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
+	public void verifyRegisteringAccountUsingKeyboarkey() throws IOException {
 
-		registerpage.clickMyAccountMenuOnRegisterPage();
+		 driver=pressKeyMultipleTime(driver,Keys.TAB,23);
+			driver= enterDetailIntoregisterAccountPageFields(driver);
+		AccountSuccessPage accountsuccesspage = new AccountSuccessPage(driver);
+		
+		Assert.assertTrue(accountsuccesspage.displaylogoutOption());
 
-		loginpage = registerpage.clickMyAccountLoginRegisterPage();
-		loginpage.selectContinueButtonOnLoginPage();
-		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
-		loginpage = registerpage.clickMyAccountLoginRegisterPage();
-		loginpage.selectContinueButtonOnLoginPage();
-
-		loginpage.clickRegisterOptionOnSideLoginPage();
-
-		Assert.assertTrue(registerpage.didNavigateToRegisterAccountPage());
+		Assert.assertTrue(accountsuccesspage.getSuccessAccountBreadcrumb());
 
 	}
 
